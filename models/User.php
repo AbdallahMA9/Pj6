@@ -1,23 +1,13 @@
 <?php
 
-/**
- * Entité User : un user est défini par son id, un login et un password.
- */ 
+
 class User extends AbstractEntity 
 {
-    private int $id;
+
     private string $email;
     private string $password;
     private string $username;
     
-
-    /**
-     * Getter pour le login.
-     * @return int
-     */
-    public function getId(): int {
-        return $this->id;
-    }
 
     /**
      * Setter pour le login.

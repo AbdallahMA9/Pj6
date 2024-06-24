@@ -4,6 +4,8 @@
 require_once 'config/config.php';
 require_once 'config/autoload.php';
 
+require_once 'models/User.php';
+
 // On récupère l'action demandée par l'utilisateur.
 // Si aucune action n'est demandée, on affiche la page d'accueil.
 $action = Utils::request('action', 'home');

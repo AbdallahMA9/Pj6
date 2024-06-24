@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Système d'autoload. 
  * A chaque fois que PHP va avoir besoin d'une classe, il va appeler cette fonction 

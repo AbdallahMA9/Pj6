@@ -53,9 +53,9 @@
             </div>
             <div class="chat-messages">
                 <?php foreach ($messages as $message): ?>
-                    <div class="message <?= $message->getIdUser() == $_SESSION['user']['id'] ? 'sent' : 'received' ?>">
+                    <div class="message <?= $message->getIdUser() == $_SESSION['idUser'] ? 'sent' : 'received' ?>">
                         <p><?= htmlspecialchars($message->getContent()) ?></p>
-                        <span class="time"><?= htmlspecialchars($message->getDateCreation()->format('H:i d.m.Y')) ?></span>
+                        <span class="time"><?= htmlspecialchars($message->getDateCreation()->format('d/m H:i')) ?></span>
                     </div>
                 <?php endforeach; ?>
             </div>

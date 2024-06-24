@@ -8,7 +8,7 @@ class MessageController
     {
 
         // Débogage: vérifiez le contenu de $_SESSION['user']
-        $currentUserId = $_SESSION['user'];
+        $currentUserId= $_SESSION['idUser'] ;
         $receiverId = Utils::request("id");
 
         // Récupérer les messages échangés entre les deux utilisateurs
@@ -25,7 +25,7 @@ class MessageController
 
 
         // Débogage: vérifiez le contenu de $_SESSION['user']
-        $currentUserId = $_SESSION['user']->getId();
+        $currentUserId = $_SESSION['idUser'];
         $receiverId = Utils::request("receiver_id");
         $content = Utils::request("content");
 
