@@ -36,4 +36,21 @@ class UserManager extends AbstractEntityManager
             'password' => $user->getPassword()
         ]);
     }
+
+    /**
+     * Récupère un article par son id.
+     * @param int $id : l'id de l'article.
+     * @return User|null : un objet Article ou null si l'article n'existe pas.
+     */
+    public function getUserById(int $id) : ?User
+    {
+        $sql = "SELECT * FROM user WHERE id = :id";
+        $result = $this->db->query($sql, ['id' => $id]);
+        $user = $result->fetch();
+        if ($user) {
+            return new User($user);
+        }
+        return null;
+    }
+
 }

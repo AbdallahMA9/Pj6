@@ -59,6 +59,22 @@ class BookManager extends AbstractEntityManager
     }
 
     /**
+     * Récupère tous les articles.
+     * @param int $id : l'id de l'utilisateur.
+     * @return array : un tableau d'objets Book.
+     */
+    public function getBooksByUser(int $id) : array
+    {
+        $sql = "SELECT book.* FROM book WHERE id_user = :id";
+        $result = $this->db->query($sql, ['id' => $id]);
+        $books = [];
+    
+        while ($bookData = $result->fetch()) {
+            $books[] = new Book($bookData);
+        }
+        return $books;
+    }
+    /**
      * Ajoute ou modifie un article.
      * On sait si l'article est un nouvel article car son id sera -1.
      * @param Article $article : l'article à ajouter ou modifier.

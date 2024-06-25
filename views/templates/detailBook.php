@@ -40,7 +40,7 @@
                         <span><?= $book->getUsername() ?></span>
                     </div>
                 </div>
-                <a class="send-message">Envoyer un message</a>
+                <a href="index.php?action=message&id=<?= $book->getIdUser() ?>" class="send-message">Envoyer un message</a>
             </div>
         </div>
     </main>

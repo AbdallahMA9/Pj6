@@ -1,29 +1,43 @@
 <?php
 
-class MessageController 
+class MessageController
 {
 
-
-    public function Message() : void
+    /**
+     * Vérifie que l'utilisateur est connecté.
+     * @return void
+     */
+    private function checkIfUserIsConnected(): void
     {
+        // On vérifie que l'utilisateur est connecté.
+        if (!isset($_SESSION['user'])) {
+            Utils::redirect("connectionForm");
+        }
+    }
 
-        // Débogage: vérifiez le contenu de $_SESSION['user']
-        $currentUserId= $_SESSION['idUser'] ;
+    public function Message(): void
+    {
+        $this->checkIfUserIsConnected();
+        $currentUserId = $_SESSION['idUser'];
         $receiverId = Utils::request("id");
 
         // Récupérer les messages échangés entre les deux utilisateurs
         $messageManager = new MessageManager();
         $messages = $messageManager->getMessagesBetweenUsers($currentUserId, $receiverId);
 
+        // Récupérer les informations de l'utilisateur récepteur
+        $userManager = new UserManager(); // suppose que vous avez une classe UserManager pour gérer les utilisateurs
+        $receiver = $userManager->getUserById($receiverId);
+
         // Passer les données à la vue
         $view = new View("Messagerie");
-        $view->render("message", ['messages' => $messages, 'receiverId' => $receiverId]);
+        $view->render("message", ['messages' => $messages, 'receiver' => $receiver, 'receiverId' => $receiverId]);
     }
 
-    public function addMessage() : void
+    public function addMessage(): void
     {
 
-
+        $this->checkIfUserIsConnected();
         // Débogage: vérifiez le contenu de $_SESSION['user']
         $currentUserId = $_SESSION['idUser'];
         $receiverId = Utils::request("receiver_id");

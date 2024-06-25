@@ -16,13 +16,13 @@ try {
     switch ($action) {
         // Pages accessibles à tous.
         case 'home':
-            $articleController = new BookController();
-            $articleController->showHome();
+            $bookController = new BookController();
+            $bookController->showHome();
             break;
 
         case 'books':
-            $articleController = new BookController();
-            $articleController->showBooks();
+            $bookController = new BookController();
+            $bookController->showBooks();
             break;
 
         case 'message':
@@ -33,6 +33,11 @@ try {
         case 'addMessage':
             $messageController = new MessageController();
             $messageController->addMessage();
+            break;
+
+        case 'profil':
+            $bookController = new BookController();
+            $bookController->showProfil();
             break;
 
         case 'apropos':

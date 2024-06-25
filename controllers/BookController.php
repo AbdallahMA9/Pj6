@@ -15,6 +15,32 @@ class BookController
         $view->render("home", ['books' => $books]);
     }
 
+    /**
+     * Affiche le détail d'un article.
+     * @return void
+     */
+    public function showProfil() : void
+    {
+        // Récupération de l'id de l'article demandé.
+        $id = Utils::request("id", -1);
+
+
+        $userManager = new UserManager();
+        $user = $userManager->getUserById($id);
+        
+        $bookManager = new BookManager();
+        $books = $bookManager->getBooksByUser($id);
+
+        if (!$user) {
+            throw new Exception("L'utilisateur n'existe pas.");
+        }
+
+
+        $view = new View($user->getUsername());
+        $view->render("profil", ['user' => $user, 'books' => $books]);
+    }
+
+
     public function showBooks() : void
     {
         $bookManager = new BookManager();

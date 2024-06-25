@@ -24,7 +24,7 @@
             <div class="contact message-active">
                 <img src="images/owner_image.jpg" alt="User 1">
                 <div class="contact-info">
-                    <h3>Alexlecture</h3>
+                    <h3><?= Utils::format($receiver->getUsername()) ?></h3>
                     <p>Lorem ipsum dolor sit amet,...</p>
                 </div>
                 <span class="time">15:43</span>
@@ -49,24 +49,25 @@
         <div class="chat-window">
             <div class="chat-header">
                 <img src="images/owner_image.jpg" alt="Alexlecture">
-                <h3>Alexlecture</h3>
+                <h3><?= Utils::format($receiver->getUsername()) ?></h3>
             </div>
             <div class="chat-messages">
                 <?php foreach ($messages as $message): ?>
                     <div class="message <?= $message->getIdUser() == $_SESSION['idUser'] ? 'sent' : 'received' ?>">
-                        <p><?= htmlspecialchars($message->getContent()) ?></p>
-                        <span class="time"><?= htmlspecialchars($message->getDateCreation()->format('d/m H:i')) ?></span>
+                        <p><?= Utils::format($message->getContent()) ?></p>
+                        <span class="time"><?= Utils::format($message->getDateCreation()->format('d/m H:i')) ?></span>
                     </div>
                 <?php endforeach; ?>
             </div>
             <div class="chat-input">
                 <form action="index.php?action=addMessage" method="post">
-                    <input type="hidden" name="receiver_id" value="<?= htmlspecialchars($receiverId) ?>">
+                    <input type="hidden" name="receiver_id" value="<?= Utils::format($receiverId) ?>">
                     <input type="text" name="content" placeholder="Tapez votre message ici" required>
                     <button type="submit" class="btn">Envoyer</button>
                 </form>
             </div>
         </div>
+
     </div>
     <footer>
         <p><a href="#">Politique de confidentialité</a> <a href="#">Mentions légales</a> <a href="index.php?action=home">TomTroo ©</a> <a
