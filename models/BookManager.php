@@ -106,16 +106,18 @@ class BookManager extends AbstractEntityManager
 
     /**
      * Modifie un article.
-     * @param Article $article : l'article à modifier.
+     * @param Book $book : l'article à modifier.
      * @return void
      */
-    public function updateArticle(Article $article) : void
+    public function updateBook(Book $book) : void
     {
-        $sql = "UPDATE article SET title = :title, content = :content, date_update = NOW() WHERE id = :id";
+        $sql = "UPDATE book SET title = :title, content = :content, author = :author, available = :available WHERE id = :id";
         $this->db->query($sql, [
-            'title' => $article->getTitle(),
-            'content' => $article->getContent(),
-            'id' => $article->getId()
+            'title' => $book->getTitle(),
+            'content' => $book->getContent(),
+            'author' => $book->getAuthor(),
+            'available' => $book->getAvailable(),
+            'id' => $book->getId()
         ]);
     }
 
@@ -124,9 +126,9 @@ class BookManager extends AbstractEntityManager
      * @param int $id : l'id de l'article à supprimer.
      * @return void
      */
-    public function deleteArticle(int $id) : void
+    public function deleteBook(int $id) : void
     {
-        $sql = "DELETE FROM article WHERE id = :id";
+        $sql = "DELETE FROM book WHERE id = :id";
         $this->db->query($sql, ['id' => $id]);
     }
 

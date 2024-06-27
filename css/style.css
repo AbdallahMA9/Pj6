@@ -8,6 +8,11 @@ body {
     background-color: #f5f3ef;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 header {
     padding: 20px;
     display: flex;
@@ -221,6 +226,11 @@ footer a {
     border-radius: 10px;
     cursor: pointer;
 }
+.light{
+    background-color: #FFFFFF;
+    color: #00AC66;
+    border: 1px #00AC66 solid;
+}
 
 .btn:disabled {
     background-color: #cccccc;
@@ -326,5 +336,47 @@ footer a {
     height: 50px;
     text-align: center;
     align-content: center;
+}
+
+.book-details input {
+    width: 70%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #edf2f6;
+}
+.book-details label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #a6a6a6;
+}
+.fifty{
+    width: 50%;
+}
+
+.book-details textarea {
+    width: 70%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #edf2f6;
+    font-family: Arial, sans-serif;
+}
+
+.book-details select {
+    width: 70%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #edf2f6;
+    font-family: Arial, sans-serif;
 }
  

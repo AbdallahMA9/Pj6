@@ -36,8 +36,18 @@ try {
             break;
 
         case 'profil':
-            $bookController = new BookController();
-            $bookController->showProfil();
+            $userController = new UserController();
+            $userController->showProfil();
+            break;
+
+        case 'updateUser':
+            $userController = new UserController();
+            $userController->updateUser();
+            break;
+
+        case 'account':
+            $userController = new UserController();
+            $userController->myProfil();
             break;
 
         case 'apropos':
@@ -99,14 +109,20 @@ try {
             $userController->showUpdateArticleForm();
             break;
 
-        case 'updateArticle': 
-            $userController = new UserController();
-            $userController->updateArticle();
+        case 'myBook': 
+            $bookController = new BookController();
+            $bookController->myBook();
+            break;
+    
+
+        case 'updateBook': 
+            $bookController = new BookController();
+            $bookController->updateBook();
             break;
 
-        case 'deleteArticle':
-            $userController = new UserController();
-            $userController->deleteArticle();
+        case 'deleteBook':
+            $bookController = new BookController();
+            $bookController->deleteBook();
             break;
         case 'deleteComment': 
             $userController = new UserController();

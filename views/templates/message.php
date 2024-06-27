@@ -1,21 +1,21 @@
-
-    <link rel="stylesheet" href="./css/message.css">
+<link rel="stylesheet" href="./css/message.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
             <img src="images/logo.png" alt="TomTroo Logo">
         </div>
         <div class="link">
-            <a href="index.php?action=home" >Accueil</a>
+            <a href="index.php?action=home">Accueil</a>
             <a href="index.php?action=books ">Nos livres à l'échange</a>
         </div>
         <nav>
             <a href="#" class="active"><img src="images/messagerie.svg" alt="messagerie icon">Messagerie</a>
-            <a href="#" ><img src="images/compte.svg" alt="compte icon">Mon compte</a>
-            <a href="index.php?action=connectionForm" >Connexion</a>
+            <a href="index.php?action=account"><img src="images/compte.svg" alt="compte icon">Mon compte</a>
+            <a href="index.php?action=connectionForm">Connexion</a>
 
-            
+
         </nav>
     </header>
     <div class="messaging-container">
@@ -54,8 +54,11 @@
             <div class="chat-messages">
                 <?php foreach ($messages as $message): ?>
                     <div class="message <?= $message->getIdUser() == $_SESSION['idUser'] ? 'sent' : 'received' ?>">
+                        <div class="message-header">
+                            <img src="images/owner_image.jpg" alt="Profile Image">
+                            <span class="time"><?= Utils::format($message->getDateCreation()->format('d/m H:i')) ?></span>
+                        </div>
                         <p><?= Utils::format($message->getContent()) ?></p>
-                        <span class="time"><?= Utils::format($message->getDateCreation()->format('d/m H:i')) ?></span>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -70,8 +73,10 @@
 
     </div>
     <footer>
-        <p><a href="#">Politique de confidentialité</a> <a href="#">Mentions légales</a> <a href="index.php?action=home">TomTroo ©</a> <a
-                href="index.php?action=home"><img src="images/logot.svg" alt="TomTroo Logo"></a></p>
+        <p><a href="#">Politique de confidentialité</a> <a href="#">Mentions légales</a> <a
+                href="index.php?action=home">TomTroo ©</a> <a href="index.php?action=home"><img src="images/logot.svg"
+                    alt="TomTroo Logo"></a></p>
     </footer>
 </body>
+
 </html>

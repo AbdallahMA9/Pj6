@@ -1,11 +1,7 @@
-
-
-
-
-
 .container {
     display: flex;
     margin: 20px 40px;
+    max-width: 1100px;
 }
 
 .profile {
@@ -33,6 +29,7 @@
 .profile p {
     margin: 10px 0;
     font-size: 14px;
+    /* Taille de la police pour les paragraphes dans .profile */
     color: #666;
 }
 
@@ -41,19 +38,9 @@
     font-size: 18px;
 }
 
-.profile button {
-    background-color: #32b58a;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-.profile button:hover {
-    background-color: #28a074;
-}
+
+
 
 .profil-books {
     width: 75%;
@@ -64,6 +51,7 @@
     display: flex;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 150px;
 }
 
 .profil-book:nth-child(odd) {
@@ -74,8 +62,17 @@
     background-color: #e6f0ff;
 }
 
+.profil-book {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 150px;
+    overflow: hidden;
+    align-items: center;
+}
+
 .profil-book img {
-    width: 100px;
+    width: 130px;
     height: auto;
     margin-right: 20px;
 }
@@ -84,16 +81,114 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.profil-book-info h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
+    width: 100%;
 }
 
 .profil-book-info p {
     margin: 5px 0;
     font-size: 14px;
+    /* Taille de la police pour les paragraphes dans .profil-book-info */
     color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profil-book-info h3,
+.profil-book-info p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profil-book p {
+
+    width: 150px;
+    /* Limite la largeur à 100px */
+    overflow: hidden;
+    /* Masque le texte qui dépasse */
+    text-overflow: ellipsis;
+    /* Affiche des points de suspension si le texte dépasse */
+    white-space: nowrap;
+    /* Empêche le retour à la ligne */
+    font-size: 14px;
+    /* Taille de la police (vous pouvez ajuster cette valeur selon vos besoins) */
+}
+
+.profil-book .large p {
+
+    width: 250px;
+}
+
+.title {
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+.account {
+    width: 50%;
+    margin: 20px;
+}
+
+.larger{
+    width: 100%;
+    margin: 0px 20px 0px 20px;
+}
+
+.account input {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #edf2f6;
+}
+.account label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #a6a6a6;
+}
+form{
+    max-width: 450px;
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+.account h3{
+    text-align: left;
+    font-weight: normal;
+
+}
+.account .light{
+    margin-top: 10px;
+}
+
+.available{
+    background-color: #00ac66;
+    height: 45px;
+    width: 150px;
+    border-radius: 25px;
+    color: #fff;
+}
+.no-available{
+    background-color: #c56d6d;
+    height: 45px;
+    width: 150px;
+    border-radius: 25px;
+    color: #fff;
+}
+.delete{
+    color: #c56d6d;
+    text-decoration: underline;
+
+}
+.update{
+    color: #00ac66;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: underline;
+
 }

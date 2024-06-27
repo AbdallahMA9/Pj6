@@ -11,8 +11,8 @@
         </div>
         <nav>
             <a href="#"><img src="images/messagerie.svg" alt="messagerie icon">Messagerie</a>
-            <a href="#"><img src="images/compte.svg" alt="compte icon">Mon compte</a>
-            <?php if (isset($_SESSION['user'])) {?> <a href="index.php?action=disconnectUser">déonnexion</a> <?php } else {?> <a href="index.php?action=connectionForm">Connexion</a> <?php }?>
+            <a href="index.php?action=account"><img src="images/compte.svg" alt="compte icon">Mon compte</a>
+            <?php if (isset($_SESSION['user'])) {?> <a href="index.php?action=disconnectUser">déconnexion</a> <?php } else {?> <a href="index.php?action=connectionForm">Connexion</a> <?php }?>
 
             
         </nav>

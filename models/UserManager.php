@@ -38,6 +38,23 @@ class UserManager extends AbstractEntityManager
     }
 
     /**
+     * Ajoute un utilisateur dans la base de données.
+     * @param User $user
+     * @return void
+     */
+    public function modifyUser(User $user) : void 
+    {
+
+        $sql = "UPDATE user SET email = :email, username = :username, password = :password WHERE id = :id";
+        $this->db->query($sql, [
+            'username' => $user->getUsername(),
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword(),
+            'id' => $user->getId()
+        ]);
+    }
+
+    /**
      * Récupère un article par son id.
      * @param int $id : l'id de l'article.
      * @return User|null : un objet Article ou null si l'article n'existe pas.

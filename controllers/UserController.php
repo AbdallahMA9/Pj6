@@ -52,6 +52,37 @@ class UserController {
     }
 
     /**
+     * Crée un nouvel utilisateur.
+     * @return void
+     */
+    public function updateUser() : void 
+    {
+        // On récupère les données du formulaire.
+        $username = Utils::request("username");
+        $email = Utils::request("email");
+        $password = Utils::request("password");
+
+        // On hache le mot de passe.
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+
+        // On modifie l'objet User.
+        $user = new User([
+            'id'=> $_SESSION['idUser'],
+            'username' => $username,
+            'email' => $email,
+            'password' => $hashedPassword
+        ]);
+
+        // On modifie l'utilisateur.
+        $userManager = new UserManager();
+        $userManager->modifyUser($user);
+
+        Utils::redirect("account");
+    }
+
+
+    /**
      * Affiche la page d'administration.
      * @return void
      */
@@ -70,6 +101,61 @@ class UserController {
             'articles' => $articles
         ]);
     }
+
+    /**
+     * Affiche le détail d'un article.
+     * @return void
+     */
+    public function showProfil() : void
+    {
+        // Récupération de l'id de l'user demandé.
+        $id = Utils::request("id", -1);
+        if ($id == $_SESSION['idUser']) {
+            Utils::redirect("account");
+        }
+
+        $userManager = new UserManager();
+        $user = $userManager->getUserById($id);
+        
+        $bookManager = new BookManager();
+        $books = $bookManager->getBooksByUser($id);
+
+        if (!$user) {
+            throw new Exception("L'utilisateur n'existe pas.");
+        }
+
+
+        $view = new View($user->getUsername());
+        $view->render("profil", ['user' => $user, 'books' => $books]);
+    }
+
+    /**
+     * Affiche le détail d'un article.
+     * @return void
+     */
+    public function myProfil() : void
+    {
+        // On vérifie que l'utilisateur est connecté.
+        $this->checkIfUserIsConnected();
+        // Récupération de l'id de l'article demandé.
+        $id = $_SESSION['idUser'];
+
+
+        $userManager = new UserManager();
+        $user = $userManager->getUserById($id);
+        
+        $bookManager = new BookManager();
+        $books = $bookManager->getBooksByUser($id);
+
+        if (!$user) {
+            throw new Exception("L'utilisateur n'existe pas.");
+        }
+
+
+        $view = new View($user->getUsername());
+        $view->render("myprofil", ['user' => $user, 'books' => $books]);
+    }
+
     public function showAdminArticle() : void 
     {
 
