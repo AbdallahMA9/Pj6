@@ -24,7 +24,7 @@
                 <p>Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. TomTroo
                     est une
                     plateforme qui partage des passions et d'histoires à travers les livres.</p>
-                <a href="index.php?action=books">Découvrir</a>
+                <a class="btn" href="index.php?action=books">Découvrir</a>
             </div>
             <div class="image-container">
                 <img src="images/hero.png"
