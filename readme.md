@@ -1,4 +1,4 @@
-## BProjet6 TomTroc
+## Projet6 TomTroc
 
 ## Pour utiliser ce projet : 
 
