@@ -60,25 +60,6 @@ try {
             $articleController->showBook();
             break;
 
-        case 'addArticle':
-            $articleController = new BookController();
-            $articleController->addArticle();
-            break;
-
-        case 'addComment':
-            $commentController = new CommentController();
-            $commentController->addComment();
-            break;
-
-        case 'admin': 
-            $userController = new UserController();
-            $userController->showAdmin();
-            break;
-        case 'listearticle': 
-            $userController = new UserController();
-            $userController->showAdminArticle();
-            break;
-
         case 'connectionForm':
             $userController = new UserController();
             $userController->displayConnectionForm();
@@ -104,11 +85,6 @@ try {
             $userController->disconnectUser();
             break;
 
-        case 'showUpdateArticleForm':
-            $userController = new UserController();
-            $userController->showUpdateArticleForm();
-            break;
-
         case 'myBook': 
             $bookController = new BookController();
             $bookController->myBook();
@@ -123,10 +99,6 @@ try {
         case 'deleteBook':
             $bookController = new BookController();
             $bookController->deleteBook();
-            break;
-        case 'deleteComment': 
-            $userController = new UserController();
-            $adminController->deleteComment();
             break;
 
         default:

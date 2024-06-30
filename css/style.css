@@ -34,10 +34,17 @@ header nav a {
     text-decoration: none;
     color: #000;
 }
+header nav .messenger{
+    display: ruby;
+}
+
 
 header nav a img {
     margin-right: 7px;
 
+}
+header nav a div {
+    margin-left: 5px; 
 }
 
 header nav a:hover {
@@ -76,7 +83,7 @@ header nav a:hover {
 .hero .content h1 {
     font-family: "Playfair Display", serif;
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .hero .content p {
@@ -241,11 +248,13 @@ footer a {
 .breadcrumb {
     padding: 10px 20px;
     font-size: 14px;
+    background-color: #faf9f7;
+
 }
 
 .breadcrumb a {
     text-decoration: none;
-    color: #008000;
+    color: #00AC66;
 }
 
 .breadcrumb span {
@@ -254,6 +263,8 @@ footer a {
 
 .contentb {
     display: flex;
+    background-color: #faf9f7;
+
 }
 .book-image {
     min-width: 50%;
@@ -263,6 +274,13 @@ footer a {
     width: 100%;
     height: 100%;
 }
+
+.book-image .update{
+    width: 80%;
+    margin-left: 50px;
+    max-height: 70%;
+}
+
 
 .book-details {
     margin-left: 20px;
@@ -336,6 +354,7 @@ footer a {
     height: 50px;
     text-align: center;
     align-content: center;
+    padding: 10px;
 }
 
 .book-details input {
@@ -380,3 +399,63 @@ footer a {
     font-family: Arial, sans-serif;
 }
  
+.search-form {
+    position: relative;
+    max-width: 600px; /* or any other width */
+
+    display: flex;
+}
+
+.search-input {
+    min-width: 220px;
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 6px; /* Rounded borders */
+    outline: none; /* Removes the outline */
+    box-shadow: none; /* Removes box-shadow */
+}
+
+.search-button {
+    position: absolute;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 0 25px 25px 0; /* Rounded border on the right side */
+    font-size: 18px;
+    color: #666; /* Icon color */
+}
+
+.search-input:focus {
+    border-color: #0056b3; /* Focus color change */
+}
+.no-margin h1{
+    margin-bottom: 0;
+}
+
+.search-button img {
+    width: 20px;
+    height: auto;
+}
+.notification{
+    background-color: #111;
+    color: #fff;
+    border-radius: 50%;
+    width: 15px;
+    text-align: center;
+}
+
+.validate{
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+.breadcrumb h1{
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+}
+.back-color{
+    background-color: #faf9f7;
+}

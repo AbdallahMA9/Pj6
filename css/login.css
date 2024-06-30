@@ -20,6 +20,7 @@ body {
 .login-form {
     padding: 50px;
     width: 50%;
+    margin-left: 5%;
 }
 
 .login-form h1 {
@@ -35,15 +36,17 @@ body {
 }
 
 .login-form input {
-    width: 100%;
+    width: 350px;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+
 }
 
 .login-form .btn {
+    width: 370px;
     background-color: #00AC66;
     color: white;
     border: none;
@@ -51,6 +54,7 @@ body {
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .login-form p {
@@ -64,6 +68,7 @@ body {
 
 .login-image {
     width: 50%;
+    min-width: 50%;
     height: 100%;
     overflow: hidden;
 }

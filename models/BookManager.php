@@ -25,18 +25,27 @@ class BookManager extends AbstractEntityManager
      * Récupère tous les articles.
      * @return array : un tableau d'objets Article.
      */
-    public function getAllBooks() : array
+    public function getAllBooks(string $searchTerm = ''): array
     {
-        $sql = "SELECT book.*, user.username FROM book 
-                JOIN user ON book.id_user = user.id";
-        $result = $this->db->query($sql);
-        $books = [];
+        if (!empty($searchTerm)) {
+            $sql = "SELECT book.*, user.username FROM book 
+                    JOIN user ON book.id_user = user.id
+                    WHERE book.title LIKE :title"; // Utiliser :title pour la liaison de paramètre
+            $params = ['title' => '%' . $searchTerm . '%'];
+            $result = $this->db->query($sql, $params);
+        } else {
+            $sql = "SELECT book.*, user.username FROM book 
+                    JOIN user ON book.id_user = user.id";
+            $result = $this->db->query($sql);
+        }
     
+        $books = [];
         while ($bookData = $result->fetch()) {
             $books[] = new Book($bookData);
         }
         return $books;
     }
+    
 
     
     /**

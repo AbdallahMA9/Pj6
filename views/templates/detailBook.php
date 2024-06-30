@@ -10,9 +10,9 @@
             <a href="index.php?action=books ">Nos livres à l'échange</a>
         </div>
         <nav>
-            <a href="#"><img src="images/messagerie.svg" alt="messagerie icon">Messagerie</a>
+        <a class="messenger" href="index.php?action=message"><img src="images/messagerie.svg" alt="messagerie icon">Messagerie<div class="notification">1</div></a>
             <a href="index.php?action=account"><img src="images/compte.svg" alt="compte icon">Mon compte</a>
-            <a href="#">Connexion</a>
+            <a href="index.php?action=connectionForm">Connexion</a>
         </nav>
     </header>
     <main>
