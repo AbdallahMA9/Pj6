@@ -12,5 +12,5 @@
 Pour la configuration du projet renomez le fichier _\_config.php_ (dans le dossier _config_) en _config.php_ et éditez le si nécessaire. 
 Ce fichier contient notamment les informations de connextion à la base de données. 
 
-Pour vous connecter en partie admin, le login est "Emilie" et le mot de passe est "password" (attention aux majuscules)
+Les identifiants de l'utilisateur Alex sont email: alex@mail.com et le mot de pass: password 
 
